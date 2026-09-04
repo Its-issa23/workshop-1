@@ -1,0 +1,18 @@
+# Python & Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Archivos de datos generados localmente
+database/*.db
+database/*.sqlite
+
+# Sistema y IDE
+.DS_Store
+.vscode/
+.idea/
