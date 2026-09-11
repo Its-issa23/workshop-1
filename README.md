@@ -105,12 +105,14 @@ Evaluación y Selección Operativa de Candidatos Tecnológicos.
 
 ## 7. Tecnologías Utilizadas
 
-* **Lenguaje:** Python 3.10+
-* **Procesamiento de Datos:** Pandas, NumPy
-* **Base de Datos / DW:** SQLite (compatible con PostgreSQL / MySQL)
+* **Lenguaje Principal:** Python 3.x
+* **Procesamiento de Datos:** `Pandas`
+* **ORM / Conectividad SQL:** `SQLAlchemy` + `PyMySQL`
+* **Control de Conectores:** MySQL Connector/NET
+* **Base de Datos / Data Warehouse:** MySQL Server (Base de datos: `recruitment_dw`)
 * **Entorno de Exploración:** Jupyter Notebooks / VS Code
 * **Control de Versiones:** Git & GitHub
-
+* **Visualización & BI:** Power BI Desktop
 ---
 
 ## 8. Instrucciones de Ejecución (Reproducibilidad)
@@ -131,3 +133,110 @@ pip install -r requirements.txt
 
 # 4. Ejecutar la tubería ETL completa
 python src/main.py
+
+## 9. Resultados de Consultas Analíticas (SQL)
+
+### R1: Hiring Trends (Tendencias de Contratación)
+**Pregunta de Negocio:** ¿Cómo ha evolucionado la tasa y volumen de contratación por año?
+
+| Año | Total Postulaciones | Total Contratados | Tasa Contratación (%) |
+| :--- | :--- | :--- | :--- |
+| [AÑO_1] | [POST_1] | [CONT_1] | [TASA_1]% |
+| [AÑO_2] | [POST_2] | [CONT_2] | [TASA_2]% |
+| [AÑO_3] | [POST_3] | [CONT_3] | [TASA_3]% |
+
+* **Interpretación:** [EJEMPLO: Se mantiene un volumen constante de contrataciones cercano al 13.4% anual, demostrando consistencia en los filtros de selección a lo largo del tiempo.]
+
+---
+
+### R2: Technology Analysis (Análisis Tecnológico)
+**Pregunta de Negocio:** ¿Cuáles tecnologías generan la mayor cantidad de contratados y mayor tasa de conversión?
+
+| Tecnología | Total Postulaciones | Total Contratados | Tasa Contratación (%) |
+| :--- | :--- | :--- | :--- |
+| [TECH_1] | [POST_1] | [CONT_1] | [TASA_1]% |
+| [TECH_2] | [POST_2] | [CONT_2] | [TASA_2]% |
+| [TECH_3] | [POST_3] | [CONT_3] | [TASA_3]% |
+
+* **Interpretación:** [EJEMPLO: La tecnología con mayor volumen de contratados es X, mientras que Y registra la mayor tasa de efectividad.]
+
+---
+
+### R3: Candidate Profile Analysis (Perfil del Candidato)
+**Pregunta de Negocio:** ¿Existen diferencias significativas en la tasa de contratación según el nivel de Seniority y años de experiencia?
+
+| Seniority | Total Postulaciones | Total Contratados | Promedio YOE | Tasa Contratación (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| [SENIORITY_1] | [POST_1] | [CONT_1] | [YOE_1] | [TASA_1]% |
+| [SENIORITY_2] | [POST_2] | [CONT_2] | [YOE_2] | [TASA_2]% |
+| [SENIORITY_3] | [POST_3] | [CONT_3] | [YOE_3] | [TASA_3]% |
+
+* **Interpretación:** [EJEMPLO: La tasa de contratación es homogénea entre niveles de Seniority, indicando que las pruebas técnicas no están sesgadas por la experiencia previa.]
+
+---
+
+### R4: Geographic Recruitment Analysis (Análisis Geográfico)
+**Pregunta de Negocio:** ¿Qué países aportan el mayor volumen de contrataciones efectivas para la estrategia global?
+
+| País | Total Postulaciones | Total Contratados | Tasa Contratación (%) |
+| :--- | :--- | :--- | :--- |
+| [PAIS_1] | [POST_1] | [CONT_1] | [TASA_1]% |
+| [PAIS_2] | [POST_2] | [CONT_2] | [TASA_2]% |
+| [PAIS_3] | [POST_3] | [CONT_3] | [TASA_3]% |
+
+* **Interpretación:** [EJEMPLO: Los países con mayor número de contrataciones efectivas son X e Y, sugiriendo priorizar esfuerzos de reclutamiento en estas regiones.]
+
+---
+
+### R5: Technical Evaluation Efficiency (Cuellos de Botella Técnicos)
+**Pregunta de Negocio:** ¿Dónde se pierden más candidatos (reto de código vs entrevista) y cómo optimizar horas de evaluación?
+
+| Categoría de Evaluación | Total Candidatos | Porcentaje (%) |
+| :--- | :--- | :--- |
+| Aprobó Ambos (HIRED) | [CAND_1] | [PCT_1]% |
+| Reprobó Solo Código | [CAND_2] | [PCT_2]% |
+| Reprobó Solo Entrevista | [CAND_3] | [PCT_3]% |
+| Reprobó Ambos | [CAND_4] | [PCT_4]% |
+
+* **Interpretación:** [EJEMPLO: El mayor embudo ocurre en la prueba de código / en ambas pruebas, lo que justifica automatizar la primera fase para ahorrar horas de entrevista técnica.]
+
+---
+
+## 10. Dashboard Interactivo en Power BI
+
+![Dashboard de Reclutamiento](diagrams/dashboard.png)
+
+### Reportes Visuales Implementados:
+
+1. **Tarjetas de KPIs Principales (Banner Macro):** Tres tarjetas en la parte superior que sintetizan el embudo general: **Total Postulaciones** (50k), **Total Contratados** (7k) y **Tasa de Contratación** (13.40%).
+2. **Evolución Temporal de Contrataciones (Soporta R1):** Gráfico de líneas (*Tendencia Temporal de Contrataciones*) que muestra el comportamiento y la estabilidad del flujo de contratación mes a mes entre 2018 y 2019.
+3. **Contrataciones por Tecnología y Seniority (Soporta R2):** Gráfico de barras horizontales agrupadas que analiza la demanda de las principales herramientas tecnológicas (*System Administration, Security, Mulesoft, QA, Salesforce*, etc.) clasificadas por rol de seniority.
+4. **Experiencia (YOE) vs. Volumen por Seniority (Soporta R3):** Gráfico combinado de columnas y líneas que relaciona la cantidad de contratados por perfil (*Intern, Junior, Trainee, Architect, Senior*, etc.) contra sus Años Promedio de Experiencia (*YOE*).
+5. **Evaluación Técnica y Cuellos de Botella (Soporta R5):** Gráfico de dispersión (*Promedio de Code_Challenge_Score vs. Technical_Interview_Score*) que mapea la separación clara entre candidatos contratados (`1`) y no contratados (`0`) según su desempeño en las pruebas técnicas.
+---
+
+## 11. Validación Final de Requisitos (Task 8)
+
+| Requisito | ¿Implementado? | Tablas DW Utilizadas | Consulta / KPI | Hallazgo Principal |
+| :--- | :--- | :--- | :--- | :--- |
+| **R1** | Sí | `Fact_Contrataciones`, `Dim_Tiempo` | `COUNT(*)`, `SUM(Is_Hired)` por Año | Contratación estable (~13.4%) en el período analizado. |
+| **R2** | Sí | `Fact_Contrataciones`, `Dim_Tecnologia` | Top Tecnologías por contratados | [TECNOLOGIA_LIDER] lidera las contrataciones. |
+| **R3** | Sí | `Fact_Contrataciones`, `Dim_Nivel`, `Dim_Candidato` | Contratados y AVG(YOE) por Seniority | Desempeño uniforme entre perfiles Junior y Senior. |
+| **R4** | Sí | `Fact_Contrataciones`, `Dim_Ubicacion` | Top Países por volumen contratado | [PAIS_LIDER] concentra el mayor volumen efectivo. |
+| **R5** | Sí | `Fact_Contrataciones` | Clasificación por puntajes de prueba | [X]% de candidatos son descartados en ambas pruebas. |
+
+### Respuestas a Preguntas de Evaluación:
+* **¿El Data Warehouse proporciona suficiente información para responder los 5 requisitos?**  
+  Sí, el modelo en estrella consolida métricas aditivas (`Is_Hired`) y semiaditivas (`Code_Challenge_Score`, `Technical_Interview_Score`) vinculadas a 5 dimensiones que cubren el 100% de los requerimientos de negocio.
+* **¿El modelo dimensional contiene elementos no justificados por los requerimientos?**  
+  No, cada dimensión y atributo integrado responde directamente a una pregunta de la matriz de trazabilidad.
+* **¿Qué decisiones de negocio se pueden apoyar con el sistema implementado?**  
+  Se pueden optimizar los presupuestos de reclutamiento enfocado en geografías con mayor tasa de éxito (R4), automatizar filtros iniciales de código para reducir horas de entrevista técnica (R5) y planificar campañas de contratación según la demanda por tecnología (R2).
+
+---
+
+## 12. Conclusiones y Decisiones de Negocio
+
+* **Optimización del Proceso:** La tasa global de contratación del 13.4% indica un filtro técnico exigente. Filtrar candidatos mediante el reto de código antes de la entrevista presencial reduce costos operativos significativamente.
+* **Enfoque Estratégico:** Priorizar ofertas de empleo e inversión publicitaria en las tecnologías y países que muestran mayor volumen de candidatos calificados.
+* **Rendimiento del DW:** La migración a **MySQL Server** permite a herramientas como Power BI realizar consultas analíticas de manera eficiente sobre los 50,000 registros procesados.
