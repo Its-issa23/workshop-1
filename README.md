@@ -133,8 +133,8 @@ pip install -r requirements.txt
 
 # 4. Ejecutar la tubería ETL completa
 python src/main.py
-
 ```
+---
 
 ## 9. Resultados de Consultas Analíticas (SQL)
 
@@ -143,11 +143,13 @@ python src/main.py
 
 | Año | Total Postulaciones | Total Contratados | Tasa Contratación (%) |
 | :--- | :--- | :--- | :--- |
-| [AÑO_1] | [POST_1] | [CONT_1] | [TASA_1]% |
-| [AÑO_2] | [POST_2] | [CONT_2] | [TASA_2]% |
-| [AÑO_3] | [POST_3] | [CONT_3] | [TASA_3]% |
+| 2018 | 11,061 | 1,409 | 12.74% |
+| 2019 | 11,009 | 1,524 | 13.84% |
+| 2020 | 11,237 | 1,485 | 13.22% |
+| 2021 | 11,051 | 1,485 | 13.44% |
+| 2022 | 5,642 | 795 | 14.09% |
 
-* **Interpretación:** [EJEMPLO: Se mantiene un volumen constante de contrataciones cercano al 13.4% anual, demostrando consistencia en los filtros de selección a lo largo del tiempo.]
+* **Interpretación:** La tasa de contratación se mantiene sumamente estable entre el 12.74% y el 14.09% a lo largo de todos los años analizados, promediando un ~13.4%. Esto demuestra consistencia en los estándares y criterios de filtro técnico del equipo de reclutamiento. El registro de 2022 refleja datos parciales del año.
 
 ---
 
@@ -156,11 +158,18 @@ python src/main.py
 
 | Tecnología | Total Postulaciones | Total Contratados | Tasa Contratación (%) |
 | :--- | :--- | :--- | :--- |
-| [TECH_1] | [POST_1] | [CONT_1] | [TASA_1]% |
-| [TECH_2] | [POST_2] | [CONT_2] | [TASA_2]% |
-| [TECH_3] | [POST_3] | [CONT_3] | [TASA_3]% |
+| Game Development | 3,818 | 519 | 13.59% |
+| DevOps | 3,808 | 495 | 13.00% |
+| System Administration | 2,014 | 293 | 14.55% |
+| Development - CMS Backend | 1,882 | 284 | 15.09% |
+| Adobe Experience Manager | 1,954 | 282 | 14.43% |
+| Database Administration | 1,933 | 282 | 14.59% |
+| Client Success | 1,927 | 271 | 14.06% |
+| Security | 1,936 | 266 | 13.74% |
+| Development - Frontend | 1,887 | 266 | 14.10% |
+| Mulesoft | 1,973 | 260 | 13.18% |
 
-* **Interpretación:** [EJEMPLO: La tecnología con mayor volumen de contratados es X, mientras que Y registra la mayor tasa de efectividad.]
+* **Interpretación:** *Game Development* y *DevOps* representan los perfiles con mayor volumen absoluto de contrataciones (519 y 495 contratados). Sin embargo, en cuanto a eficiencia del embudo, *Development - CMS Backend* registra la mayor tasa de efectividad (15.09%), seguida muy de cerca por *Database Administration* (14.59%).
 
 ---
 
@@ -169,11 +178,15 @@ python src/main.py
 
 | Seniority | Total Postulaciones | Total Contratados | Promedio YOE | Tasa Contratación (%) |
 | :--- | :--- | :--- | :--- | :--- |
-| [SENIORITY_1] | [POST_1] | [CONT_1] | [YOE_1] | [TASA_1]% |
-| [SENIORITY_2] | [POST_2] | [CONT_2] | [YOE_2] | [TASA_2]% |
-| [SENIORITY_3] | [POST_3] | [CONT_3] | [YOE_3] | [TASA_3]% |
+| Intern | 7,255 | 985 | 15.4 | 13.58% |
+| Junior | 7,100 | 977 | 15.3 | 13.76% |
+| Trainee | 7,183 | 973 | 15.2 | 13.55% |
+| Architect | 7,079 | 971 | 15.3 | 13.72% |
+| Senior | 7,059 | 939 | 15.2 | 13.30% |
+| Lead | 7,071 | 929 | 15.4 | 13.14% |
+| Mid-Level | 7,253 | 924 | 15.2 | 12.74% |
 
-* **Interpretación:** [EJEMPLO: La tasa de contratación es homogénea entre niveles de Seniority, indicando que las pruebas técnicas no están sesgadas por la experiencia previa.]
+* **Interpretación:** Las contrataciones están distribuidas de manera homogénea en todos los niveles de seniority (entre 924 y 985 contratados). Los años promedio de experiencia (YOE) se mantienen uniformes en ~15.3 años en todas las categorías, demostrando que las decisiones de contratación dependen del desempeño en los exámenes y no de la etiqueta del cargo.
 
 ---
 
@@ -182,11 +195,18 @@ python src/main.py
 
 | País | Total Postulaciones | Total Contratados | Tasa Contratación (%) |
 | :--- | :--- | :--- | :--- |
-| [PAIS_1] | [POST_1] | [CONT_1] | [TASA_1]% |
-| [PAIS_2] | [POST_2] | [CONT_2] | [TASA_2]% |
-| [PAIS_3] | [POST_3] | [CONT_3] | [TASA_3]% |
+| Northern Mariana Islands | 195 | 44 | 22.56% |
+| Heard Island and McDonald Islands | 205 | 41 | 20.00% |
+| Seychelles | 211 | 40 | 18.96% |
+| Timor-Leste | 226 | 40 | 17.70% |
+| Niger | 231 | 40 | 17.32% |
+| Sri Lanka | 215 | 40 | 18.60% |
+| Kuwait | 205 | 38 | 18.54% |
+| Saint Barthelemy | 220 | 38 | 17.27% |
+| Equatorial Guinea | 218 | 38 | 17.43% |
+| Saint Helena | 228 | 37 | 16.23% |
 
-* **Interpretación:** [EJEMPLO: Los países con mayor número de contrataciones efectivas son X e Y, sugiriendo priorizar esfuerzos de reclutamiento en estas regiones.]
+* **Interpretación:** Las contrataciones globales muestran una dispersión geográfica amplia. *Northern Mariana Islands* destaca con la tasa de conversión más alta (22.56%), seguida por *Heard Island and McDonald Islands* (20.00%). La tasa en los países con mayor cantidad de seleccionados supera consistentemente el 16%.
 
 ---
 
@@ -195,13 +215,12 @@ python src/main.py
 
 | Categoría de Evaluación | Total Candidatos | Porcentaje (%) |
 | :--- | :--- | :--- |
-| Aprobó Ambos (HIRED) | [CAND_1] | [PCT_1]% |
-| Reprobó Solo Código | [CAND_2] | [PCT_2]% |
-| Reprobó Solo Entrevista | [CAND_3] | [PCT_3]% |
-| Reprobó Ambos | [CAND_4] | [PCT_4]% |
+| Reprobró Ambos | 20,197 | 40.39% |
+| Reprobó Solo Código | 11,571 | 23.14% |
+| Reprobó Solo Entrevista | 11,534 | 23.07% |
+| Aprobó Ambos (HIRED) | 6,698 | 13.40% |
 
-* **Interpretación:** [EJEMPLO: El mayor embudo ocurre en la prueba de código / en ambas pruebas, lo que justifica automatizar la primera fase para ahorrar horas de entrevista técnica.]
-
+* **Interpretación:** El mayor embudo de selección ocurre en el descarte inicial, donde el 40.39% de los aspirantes reprueba ambas pruebas. Dado que un 23.14% adicional no supera el reto de código, automatizar y exigir el filtro de código como paso previo obligatorio elimina el 63.53% de los candidatos antes de agendar entrevistas técnicas presenciales, optimizando significativamente las horas/hombre del equipo evaluador.
 ---
 
 ## 10. Dashboard Interactivo en Power BI
