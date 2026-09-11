@@ -134,6 +134,8 @@ pip install -r requirements.txt
 # 4. Ejecutar la tubería ETL completa
 python src/main.py
 
+```
+
 ## 9. Resultados de Consultas Analíticas (SQL)
 
 ### R1: Hiring Trends (Tendencias de Contratación)
